@@ -16,7 +16,8 @@ import {
   PiggyBank as PiggyBankIcon, 
   MicOff as MicOffIcon, 
   ChevronRight as ChevronRightIcon,
-  AlertCircle as AlertCircleIcon
+  AlertCircle as AlertCircleIcon,
+  ArrowLeft as ArrowLeftIcon
 } from 'lucide-react';
 
 export default function App() {
@@ -33,9 +34,18 @@ export default function App() {
       {/* TopAppBar */}
       <header className={`sticky top-0 z-50 transition-all duration-300 border-b border-primary/10 ${isScrolled ? 'glass-effect py-3' : 'bg-surface py-4'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <GavelIcon className="text-primary w-6 h-6" />
-            <h1 className="font-black tracking-tighter text-xl text-primary uppercase">不作為の公文書庫</h1>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://project-mana-final-release2.vercel.app/" 
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors group"
+            >
+              <ArrowLeftIcon size={14} className="group-hover:-translate-x-1 transition-transform" />
+              Portal
+            </a>
+            <div className="flex items-center gap-3">
+              <GavelIcon className="text-primary w-6 h-6" />
+              <h1 className="font-black tracking-tighter text-xl text-primary uppercase">不作為の公文書庫</h1>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <button className="p-3 rounded-full hover:bg-surface-container transition-colors active:scale-95">
