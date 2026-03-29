@@ -7,7 +7,6 @@ import {
   ClipboardCheck as SurveyIcon,
   ArrowRight as ArrowRightIcon,
   Globe as GlobeIcon,
-  Lock as LockIcon,
   Zap as ZapIcon
 } from 'lucide-react';
 
@@ -45,8 +44,8 @@ export default function App() {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-black z-10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-20 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/10 rounded-full blur-[120px] opacity-20 animate-pulse" />
           </div>
 
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-8">
@@ -87,7 +86,6 @@ export default function App() {
         {/* Services Grid */}
         <section id="services" className="max-w-7xl mx-auto px-6 py-32 space-y-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Inaction-DB */}
             <div className="group p-8 rounded-[32px] bg-white/5 border border-white/10 hover:border-white/20 transition-all space-y-6">
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <DatabaseIcon className="text-white w-6 h-6" />
@@ -98,7 +96,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Misconduct-DB */}
             <div className="group p-8 rounded-[32px] bg-white/5 border border-white/10 hover:border-white/20 transition-all space-y-6">
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <ZapIcon className="text-white w-6 h-6" />
@@ -109,12 +106,11 @@ export default function App() {
               </p>
             </div>
 
-            {/* Survey */}
             <div className="group p-8 rounded-[32px] bg-white/5 border border-white/10 hover:border-white/20 transition-all space-y-6">
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <SurveyIcon className="text-white w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-black tracking-tight">不作為体験アンケート</h3>
+              <h3 className="text-2xl font-black tracking-tight">体験アンケート</h3>
               <p className="text-sm text-white/50 leading-relaxed">
                 あなたの体験をデータ化し、不作為のデータベースへ。沈黙を強いられた人々の記録。
               </p>
@@ -123,7 +119,7 @@ export default function App() {
 
           {/* Featured Integration: Archive of Inaction */}
           <div id="archive" className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-white/20 rounded-[40px] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-transparent rounded-[40px] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             <div className="relative bg-black rounded-[40px] border border-white/10 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
               <div className="absolute top-0 right-0 opacity-5 -translate-y-1/4 translate-x-1/4">
                 <ArchiveIcon size={400} />
