@@ -77,7 +77,7 @@ export default function App() {
         </section>
 
         {/* Inaction Wealth Index */}
-        <section className="space-y-6">
+        <section id="comparison" className="space-y-6 scroll-mt-24">
           <div className="flex justify-between items-end">
             <h3 className="text-2xl font-black border-l-4 border-primary pl-4 tracking-tight">不作為蓄財指数 全国比較</h3>
             <span className="text-[10px] text-primary font-black uppercase tracking-widest bg-primary/5 px-3 py-1 rounded-full">政令指定都市比較</span>
@@ -127,7 +127,7 @@ export default function App() {
         </section>
 
         {/* Surplus Quality & Update Speed Comparison Dashboard */}
-        <section className="space-y-8">
+        <section id="evaluation" className="space-y-8 scroll-mt-24">
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-black border-l-4 border-primary pl-4 tracking-tight uppercase">不作為の質と停滞速度</h3>
             <p className="text-xs text-secondary font-bold ml-5">「市民への投資」を怠った結果としての黒字を数値化</p>
@@ -247,8 +247,52 @@ export default function App() {
           </p>
         </section>
 
+        {/* Political Trend Analysis */}
+        <section id="trends" className="space-y-6 scroll-mt-24">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-2xl font-black border-l-4 border-primary pl-4 tracking-tight uppercase">政治傾向と不作為の相関</h3>
+            <p className="text-xs text-secondary font-bold ml-5">「維新」や「自民」などの政治勢力と、市民への投資姿勢の関係を分析</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-surface-container-low rounded-3xl p-8 border border-outline/10">
+              <h4 className="text-sm font-black uppercase tracking-widest mb-6">維新系自治体の特徴</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-success-fixed"></div>
+                  <p className="text-xs font-bold">巨大な余剰金の蓄積（大阪市：500億）</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-success-fixed"></div>
+                  <p className="text-xs font-bold">市民還元率の極端な低下（12%）</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-success-fixed"></div>
+                  <p className="text-xs font-bold">「効率化」を名目とした支援の削減</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-surface-container-low rounded-3xl p-8 border border-outline/10">
+              <h4 className="text-sm font-black uppercase tracking-widest mb-6">京都市（自民系）の特徴</h4>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <p className="text-xs font-bold">アップデートの完全な拒絶（18/100）</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <p className="text-xs font-bold">「予算不足」という虚偽の多用</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <p className="text-xs font-bold">既存システムの硬直化と不作為の常態化</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Archive Cards */}
-        <section className="space-y-8">
+        <section id="archive" className="space-y-8 scroll-mt-24">
           <h3 className="text-2xl font-black border-l-4 border-primary pl-4 tracking-tight">最新の不作為アーカイブ</h3>
           <div className="space-y-6">
             {MOCK_CASES.map((item) => (
@@ -282,6 +326,27 @@ export default function App() {
           </div>
         </section>
 
+        {/* Report Inaction Section */}
+        <section id="report" className="bg-primary text-white rounded-3xl p-10 relative overflow-hidden shadow-2xl scroll-mt-24">
+          <div className="absolute top-0 right-0 opacity-10 translate-x-1/4 -translate-y-1/4">
+            <FileTextIcon size={240} />
+          </div>
+          <div className="relative z-10 space-y-6">
+            <h3 className="text-3xl font-black tracking-tighter leading-tight">
+              あなたの街の「不作為」を<br />
+              <span className="text-tertiary-fixed-dim">アーカイブする</span>
+            </h3>
+            <p className="text-sm font-medium opacity-80 leading-relaxed max-w-md">
+              窓口での拒絶、放置されたインフラ、時代遅れのシステム。当事者の声が、この公文書庫を動かす原動力になります。
+            </p>
+            <div className="pt-4">
+              <button className="bg-white text-primary font-black px-8 py-4 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 uppercase tracking-widest text-sm">
+                不作為を報告する <ArrowRightIcon size={18} />
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Accountability Timeline */}
         <section className="pb-20">
           <h3 className="text-2xl font-black border-l-4 border-primary pl-4 mb-10 tracking-tight">不作為の経緯 (Timeline)</h3>
@@ -305,17 +370,15 @@ export default function App() {
       {/* BottomNavBar */}
       <nav className="glass-effect fixed bottom-0 w-full z-50 flex justify-around items-stretch px-4 py-3 pb-safe shadow-2xl border-t border-primary/5">
         {[
-          { icon: FileTextIcon, label: '報告', active: false },
-          { icon: AlertCircleIcon, label: '評価', active: false },
-          { icon: ArchiveIcon, label: '公文書庫', active: true },
-          { icon: TrendingUpIcon, label: '傾向', active: false },
+          { icon: FileTextIcon, label: '報告', id: 'report' },
+          { icon: AlertCircleIcon, label: '評価', id: 'evaluation' },
+          { icon: ArchiveIcon, label: '公文書庫', id: 'archive' },
+          { icon: TrendingUpIcon, label: '傾向', id: 'trends' },
         ].map((item) => (
           <a 
             key={item.label} 
-            className={`flex-1 flex flex-col items-center justify-center gap-1 transition-all rounded-2xl py-2 ${
-              item.active ? 'text-primary bg-primary/5 scale-105' : 'text-secondary opacity-40 hover:opacity-100'
-            }`} 
-            href="#"
+            className="flex-1 flex flex-col items-center justify-center gap-1 transition-all rounded-2xl py-2 text-secondary opacity-60 hover:opacity-100 hover:text-primary hover:bg-primary/5" 
+            href={`#${item.id}`}
           >
             <item.icon size={24} />
             <span className="text-[10px] font-black uppercase tracking-widest">{item.label}</span>

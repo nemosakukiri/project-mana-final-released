@@ -5,18 +5,38 @@
   --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
   
   --color-primary: #00113a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #002366;
+  --color-on-primary-container: #dbe1ff;
+  
   --color-secondary: #4c616c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d2e5f0;
+  --color-on-secondary-container: #071e27;
+  --color-secondary-fixed: #cfe6f2;
+  
   --color-tertiary: #330002;
-  --color-surface: #fafafa;
+  --color-tertiary-fixed-dim: #ffb3ac;
+  --color-on-tertiary-fixed: #410003;
+  
+  --color-surface: #ffffff;
+  --color-on-surface: #191c1d;
+  --color-surface-variant: #e1e3e4;
+  --color-on-surface-variant: #444749;
   --color-surface-container: #f1f1f1;
   --color-surface-container-low: #f9f9f9;
-  --color-outline: #eaeaea;
+  
+  --color-outline: #757682;
   --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  
+  --color-inverse-primary: #b3c5ff;
+  --color-success-fixed: #006e1c;
 }
 
 @layer base {
   body {
-    @apply bg-surface text-primary font-sans selection:bg-primary/10;
+    @apply bg-surface text-on-surface font-sans selection:bg-primary/10;
   }
 }
 
@@ -25,9 +45,13 @@
 }
 
 .vercel-card {
-  @apply bg-white border border-outline transition-all duration-200;
+  @apply bg-white border border-surface-variant transition-all duration-200;
 }
 
 .vercel-card:hover {
   @apply border-primary/20 shadow-xl shadow-primary/5;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }

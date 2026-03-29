@@ -63,6 +63,26 @@ export const CITY_COMPARISON: CityData[] = [
     citizenInvestmentRate: 25
   },
   { 
+    name: '神戸市', 
+    englishName: 'Kobe', 
+    surplus: '280億円', 
+    percentage: 56, 
+    surplusQuality: 60, 
+    updateSpeed: 60, 
+    politicalTrend: 'Independent',
+    citizenInvestmentRate: 22
+  },
+  { 
+    name: '福岡市', 
+    englishName: 'Fukuoka', 
+    surplus: '220億円', 
+    percentage: 44, 
+    surplusQuality: 30, 
+    updateSpeed: 85, 
+    politicalTrend: 'Independent',
+    citizenInvestmentRate: 45
+  },
+  { 
     name: '京都市', 
     englishName: 'Kyoto', 
     surplus: '180億円', 
