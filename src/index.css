@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #00113a;
+  --color-secondary: #4c616c;
+  --color-tertiary: #330002;
+  --color-surface: #fafafa;
+  --color-surface-container: #f1f1f1;
+  --color-surface-container-low: #f9f9f9;
+  --color-outline: #eaeaea;
+  --color-error: #ba1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-primary font-sans selection:bg-primary/10;
+  }
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-white/80;
+}
+
+.vercel-card {
+  @apply bg-white border border-outline transition-all duration-200;
+}
+
+.vercel-card:hover {
+  @apply border-primary/20 shadow-xl shadow-primary/5;
+}
